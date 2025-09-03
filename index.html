@@ -62,6 +62,7 @@
         .tagline {
             font-style: italic;
             margin-bottom: 1rem;
+            line-height: 1.8;
         }
         
         .container {
@@ -119,26 +120,14 @@
             padding: 1.5rem;
         }
         
-        .service-price {
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin: 0.5rem 0;
-            font-weight: bold;
-        }
-        
-        .price-list {
-            list-style: none;
-        }
-        
-        .price-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .price-list li:last-child {
-            border-bottom: none;
+        .service-description {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            font-style: italic;
+            color: #555;
+            text-align: center;
         }
         
         .specialties {
@@ -153,22 +142,45 @@
             margin: 0 auto;
         }
         
-        .specialty {
-            margin-bottom: 2rem;
-        }
-        
-        .specialty h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .payment-note {
-            background-color: #f5f5f5;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
+        .cta-section {
             text-align: center;
-            border-left: 4px solid var(--secondary);
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         
         .contact-info {
@@ -240,6 +252,18 @@
                 width: 120px;
                 height: 120px;
             }
+            
+            .cta-section {
+                padding: 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-section p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -250,11 +274,12 @@
             <img src="img/nestor-gerardo.jpeg" alt="Nestor Gerardo - Masajista profesional" class="profile-img">
             <div class="logo">Nestor Gerardo</div>
         </div>
-        <h1>Masajes Terapéuticos</h1>
-        <p class="tagline">💆🏻‍♂️Masajista Lomi Lomi
-🌸Fusion ancestral hawaiana con técnicas de relajación profunda.
-✨Menos estrés, más control.
-🫵🏻Tu cuerpo, tu decisión</p>
+        <h1>Masajista Lomi Lomi Nui</h1>
+        <p class="tagline">Fusion ancestral hawaiana con técnicas de relajación profunda.</p>
+
+        <p class="tagline"></p>Menos estrés, más control.</p>
+
+        <p class="tagline"></p>Tu cuerpo, tu decisión</p>
     </header>
     
     <div class="container">
@@ -266,20 +291,10 @@
                     <h3>Masaje Relajante Integral</h3>
                 </div>
                 <div class="service-content">
-                    <ul class="price-list">
-                        <li>
-                            <span>60 a 90 min</span>
-                            <span class="service-price">18 USD</span>
-                        </li>
-                        <li>
-                            <span>45 a 60 min</span>
-                            <span class="service-price">12 USD</span>
-                        </li>
-                        <li>
-                            <span>30 min</span>
-                            <span class="service-price">6 USD</span>
-                        </li>
-                    </ul>
+                    <div class="service-description">
+                        <!-- Espacio para descripción del Masaje Relajante Integral -->
+                        Escape total del estrés. Un masaje suave y armonioso que te transporta a un estado de paz profunda. Ideal para desconectar y recargar energías.
+                    </div>
                 </div>
             </div>
             
@@ -288,16 +303,10 @@
                     <h3>Masaje Terapéutico Tuiná (Chino)</h3>
                 </div>
                 <div class="service-content">
-                    <ul class="price-list">
-                        <li>
-                            <span>60 a 90 min</span>
-                            <span class="service-price">20 USD</span>
-                        </li>
-                        <li>
-                            <span>45 a 60 min</span>
-                            <span class="service-price">15 USD</span>
-                        </li>
-                    </ul>
+                    <div class="service-description">
+                        <!-- Espacio para descripción del Masaje Terapéutico Tuiná -->
+                        Alivia el dolor y equilibra tu energía. Técnica milenaria china que libera bloqueos y trata molestias específicas. Recupera tu bienestar integral.
+                    </div>
                 </div>
             </div>
             
@@ -306,8 +315,10 @@
                     <h3>Masaje Descontracturante</h3>
                 </div>
                 <div class="service-content">
-                    <p>Por zona (aproximadamente 30 min cada zona)</p>
-                    <p class="service-price">10 USD por zona</p>
+                    <div class="service-description">
+                        <!-- Espacio para descripción del Masaje Descontracturante -->
+                        Solución directa para tu dolor. Enfocado en zonas de tensión (espalda, cuello). Libera contracturas y alivia la rigidez de forma efectiva.
+                    </div>
                 </div>
             </div>
             
@@ -316,26 +327,12 @@
                     <h3>Masaje Especial Ancestral Lomi Lomi Nui</h3>
                 </div>
                 <div class="service-content">
-                    <ul class="price-list">
-                        <li>
-                            <span>60 a 90 min</span>
-                            <span class="service-price">30 USD</span>
-                        </li>
-                        <li>
-                            <span>45 a 60 min</span>
-                            <span class="service-price">20 USD</span>
-                        </li>
-                        <li>
-                            <span>30 min</span>
-                            <span class="service-price">12 USD</span>
-                        </li>
-                    </ul>
+                    <div class="service-description">
+                        <!-- Espacio para descripción del Masaje Lomi Lomi Nui -->
+                        Una experiencia transformadora. Viaje sensorial hawaiano con movimientos fluidos que renuevan cuerpo, mente y espíritu. Nuestra joya única.
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="payment-note">
-            <p>Si desea pagar en MN (moneda nacional), se aplicará el cambio con el toque del día que se agenda el servicio.</p>
         </div>
         
         <div class="contact-info">
@@ -355,14 +352,11 @@
     
     <div class="specialties">
         <div class="specialty-container">
-            <h2 class="section-title">Especialidades</h2>
-            
-            <div class="specialty">
-                <h3>Lomi Lomi Nui</h3>
-                <p>El Lomi Lomi Nui es un masaje ancestral hawaiano que utiliza movimientos fluidos y armoniosos que simulan las olas del océano. Esta técnica busca liberar bloqueos físicos y emocionales, promoviendo la relajación profunda y el bienestar integral.</p>
+            <div class="cta-section">
+                <h2>¿Listo para transformar tu día?</h2>
+                <p>No esperes más. Tu bienestar es ahora.<br>¡Reserva tu masaje YA MISMO!</p>
+                <a href="tel:+5358784631" class="cta-button">¡Reservar Ahora!</a>
             </div>
-            
-            
         </div>
     </div>
     
