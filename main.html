@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nestor Gerardo - Masajes Terapéuticos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #4a8f7c;
@@ -152,6 +153,46 @@
             border-left: 4px solid var(--secondary);
         }
         
+        .contact-info {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            color: var(--accent);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
         footer {
             background-color: var(--dark);
             color: white;
@@ -164,6 +205,11 @@
             .services {
                 grid-template-columns: 1fr;
             }
+            
+            .contact-methods {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -171,7 +217,7 @@
     <header>
         <div class="logo">Nestor Gerardo</div>
         <h1>Masajes Terapéuticos</h1>
-        <p class="tagline">Especialista en Lomi Lomi Nui y Tuiná (Masaje Chino)</p>
+        <p class="tagline">Especialista en Lomi Lomi Nui (Masaje Hawaiano) y Tuiná (Masaje Chino)</p>
     </header>
     
     <div class="container">
@@ -253,6 +299,20 @@
         
         <div class="payment-note">
             <p>Si desea pagar en MN (moneda nacional), se aplicará el cambio con el toque del día que se agenda el servicio.</p>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Contacto</h3>
+            <div class="contact-methods">
+                <a href="tel:+5358784631" class="contact-method">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <span>+53 5 8784631</span>
+                </a>
+                <a href="https://www.instagram.com/n3storg_touch" target="_blank" class="contact-method">
+                    <i class="fab fa-instagram contact-icon"></i>
+                    <span>@n3storg_touch</span>
+                </a>
+            </div>
         </div>
     </div>
     
