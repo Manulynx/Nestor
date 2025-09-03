@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nestor Gerardo - Masajes Terapéuticos</title>
+    <style>
+        :root {
+            --primary: #4a8f7c;
+            --secondary: #e9c46a;
+            --accent: #2a9d8f;
+            --light: #f8f9fa;
+            --dark: #264653;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-price {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        
+        .price-list {
+            list-style: none;
+        }
+        
+        .price-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .specialties {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .specialty-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .specialty {
+            margin-bottom: 2rem;
+        }
+        
+        .specialty h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .payment-note {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Nestor Gerardo</div>
+        <h1>Masajes Terapéuticos</h1>
+        <p class="tagline">Especialista en Lomi Lomi Nui y Tuiná (Masaje Chino)</p>
+    </header>
+    
+    <div class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        
+        <div class="services">
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Masaje Relajante Integral</h3>
+                </div>
+                <div class="service-content">
+                    <ul class="price-list">
+                        <li>
+                            <span>60 a 90 min</span>
+                            <span class="service-price">30 USD</span>
+                        </li>
+                        <li>
+                            <span>45 a 60 min</span>
+                            <span class="service-price">20 USD</span>
+                        </li>
+                        <li>
+                            <span>30 min</span>
+                            <span class="service-price">15 USD</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Masaje Terapéutico Tuiná (Chino)</h3>
+                </div>
+                <div class="service-content">
+                    <ul class="price-list">
+                        <li>
+                            <span>60 a 90 min</span>
+                            <span class="service-price">40 USD</span>
+                        </li>
+                        <li>
+                            <span>45 a 60 min</span>
+                            <span class="service-price">30 USD</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Masaje Descontracturante</h3>
+                </div>
+                <div class="service-content">
+                    <p>Por zona (aproximadamente 30 min cada zona)</p>
+                    <p class="service-price">15 USD por zona</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <h3>Masaje Especial Ancestral Lomi Lomi Nui</h3>
+                </div>
+                <div class="service-content">
+                    <ul class="price-list">
+                        <li>
+                            <span>60 a 90 min</span>
+                            <span class="service-price">60 USD</span>
+                        </li>
+                        <li>
+                            <span>45 a 60 min</span>
+                            <span class="service-price">40 USD</span>
+                        </li>
+                        <li>
+                            <span>30 min</span>
+                            <span class="service-price">30 USD</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-note">
+            <p>Si desea pagar en MN (moneda nacional), se aplicará el cambio con el toque del día que se agenda el servicio.</p>
+        </div>
+    </div>
+    
+    <div class="specialties">
+        <div class="specialty-container">
+            <h2 class="section-title">Especialidades</h2>
+            
+            <div class="specialty">
+                <h3>Lomi Lomi Nui</h3>
+                <p>El Lomi Lomi Nui es un masaje ancestral hawaiano que utiliza movimientos fluidos y armoniosos que simulan las olas del océano. Esta técnica busca liberar bloqueos físicos y emocionales, promoviendo la relajación profunda y el bienestar integral.</p>
+            </div>
+            
+            <div class="specialty">
+                <h3>Tuiná (Masaje Chino)</h3>
+                <p>El Tuiná es una forma de masaje terapéutico tradicional chino que trabaja sobre los meridianos y puntos de acupuntura para restablecer el flujo de energía (Qi) en el cuerpo. Es efectivo para aliviar dolores, reducir el estrés y mejorar la movilidad.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Contacta a Nestor Gerardo para agendar tu sesión de masajes terapéuticos</p>
+        <p>© 2023 Nestor Gerardo - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
