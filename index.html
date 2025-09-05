@@ -101,33 +101,74 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            border-bottom: 4px solid var(--secondary);
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 0;
+            background: var(--secondary);
+            transition: width 0.5s ease;
+        }
+        
+        .service-card:hover:before {
+            width: 100%;
         }
         
         .service-header {
             background-color: var(--primary);
             color: white;
-            padding: 1.5rem;
+            padding: 1.8rem 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header h3 {
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+        }
+        
+        .service-header:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(135deg, transparent 33%, rgba(255,255,255,0.1) 33%, rgba(255,255,255,0.1) 66%, transparent 66%);
+            background-size: 10px 10px;
         }
         
         .service-content {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
         }
         
         .service-description {
             background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
+            padding: 1.8rem;
+            border-radius: 10px;
             border-left: 4px solid var(--secondary);
             font-style: italic;
-            color: #555;
+            color: #444;
             text-align: center;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+            line-height: 1.7;
         }
         
         .specialties {
@@ -238,6 +279,78 @@
             margin-top: 3rem;
         }
         
+        /* Estilos adicionales para el catálogo */
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .benefit-tag {
+            background-color: rgba(74, 143, 124, 0.1);
+            color: var(--primary);
+            font-size: 0.85rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .benefit-tag:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #ddd;
+            font-size: 0.95rem;
+        }
+        
+        .duration {
+            color: #777;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .special-header {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ribbon {
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.3rem 2.5rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+        }
+        
         @media (max-width: 768px) {
             .services {
                 grid-template-columns: 1fr;
@@ -264,6 +377,17 @@
             .cta-section p {
                 font-size: 1rem;
             }
+            
+            .benefits {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .benefit-tag {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -288,48 +412,77 @@
         <div class="services">
             <div class="service-card">
                 <div class="service-header">
-                    <h3>Masaje Relajante Integral</h3>
+                    <h3><i class="fas fa-spa"></i> Masaje Relajante Integral</h3>
                 </div>
                 <div class="service-content">
                     <div class="service-description">
-                        <!-- Espacio para descripción del Masaje Relajante Integral -->
-                        Escape total del estrés. Un masaje suave y armonioso que te transporta a un estado de paz profunda. Ideal para desconectar y recargar energías.
+                        <strong>Escape total del estrés</strong>. Un masaje suave y armonioso que te transporta a un estado de paz profunda.
+                        <div class="benefits">
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Reduce ansiedad</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Mejora sueño</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Recarga energías</span>
+                        </div>
+                        <div class="service-footer">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="service-card">
                 <div class="service-header">
-                    <h3>Masaje Terapéutico Tuiná (Chino)</h3>
+                    <h3><i class="fas fa-leaf"></i> Masaje Terapéutico Tuiná</h3>
                 </div>
                 <div class="service-content">
                     <div class="service-description">
-                        <!-- Espacio para descripción del Masaje Terapéutico Tuiná -->
-                        Alivia el dolor y equilibra tu energía. Técnica milenaria china que libera bloqueos y trata molestias específicas. Recupera tu bienestar integral.
+                        <strong>Alivia el dolor y equilibra tu energía</strong>. Técnica milenaria china que libera bloqueos y trata molestias específicas.
+                        <div class="benefits">
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Recuperación</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Equilibrio</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Vitalidad</span>
+                        </div>
+                        <div class="service-footer">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="service-card">
                 <div class="service-header">
-                    <h3>Masaje Descontracturante</h3>
+                    <h3><i class="fas fa-hand-holding-medical"></i> Masaje Descontracturante</h3>
                 </div>
                 <div class="service-content">
                     <div class="service-description">
-                        <!-- Espacio para descripción del Masaje Descontracturante -->
-                        Solución directa para tu dolor. Enfocado en zonas de tensión (espalda, cuello). Libera contracturas y alivia la rigidez de forma efectiva.
+                        <strong>Solución directa para tu dolor</strong>. Enfocado en zonas de tensión (espalda, cuello) para aliviar contracturas.
+                        <div class="benefits">
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Alivia dolor</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Flexibilidad</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Movilidad</span>
+                        </div>
+                        <div class="service-footer">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="service-card">
-                <div class="service-header">
-                    <h3>Masaje Especial Ancestral Lomi Lomi Nui</h3>
+                <div class="service-header special-header">
+                    <h3><i class="fas fa-water"></i> Masaje Lomi Lomi Nui</h3>
+                    <div class="ribbon">Especial</div>
                 </div>
                 <div class="service-content">
                     <div class="service-description">
-                        <!-- Espacio para descripción del Masaje Lomi Lomi Nui -->
-                        Una experiencia transformadora. Viaje sensorial hawaiano con movimientos fluidos que renuevan cuerpo, mente y espíritu. Nuestra joya única.
+                        <strong>Experiencia transformadora hawaiana</strong>. Movimientos fluidos que renuevan cuerpo, mente y espíritu. Nuestra joya exclusiva.
+                        <div class="benefits">
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Renovación</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Bienestar</span>
+                            <span class="benefit-tag"><i class="fas fa-check-circle"></i> Armonía</span>
+                        </div>
+                        <div class="service-footer">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
